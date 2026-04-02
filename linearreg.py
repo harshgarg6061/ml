@@ -32,10 +32,12 @@ m=0
 c=0
 lr=0.01
 epochs=100
-loss=sqloss(m,c,data)
+
 
 for i in range(epochs):
     m,c=graddes(m,c,data,lr)
+
+loss=sqloss(m,c,data)
 
 print(f"the final values of m and c and loss are {m} and {c} and {loss}")
 plt.plot(list(range(0,13)),[m*x+c for x in range(0,13)],color="red")
